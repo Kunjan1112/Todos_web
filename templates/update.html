@@ -1,0 +1,45 @@
+{% extends 'base.html' %} 
+{% block title %} Home{% endblock title %} 
+{% block body %}
+       
+
+        <div class="container">
+            <h2>Update Todos</h2>
+            <form class="row g-3" action="/update/{{todo.sno}}" method="POST">
+                <div class="col-md-12">
+                    <label for="title " class="form-label">Todo Title</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="title"
+                        value = "{{todo.title}}"
+                        id="title"
+                    />
+                </div>
+                <div class="col-md-12">
+                    <label for="desc" class="form-label"
+                        >Todo Discription</label
+                    >
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="desc"
+                        value = "{{todo.desc}}"
+                        id="desc"
+                    />
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">
+                        Update
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+            crossorigin="anonymous"
+        ></script>
+    
+{% endblock body %}
